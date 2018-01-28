@@ -4,9 +4,9 @@
 npm install --save-dev webpack webpack-dev-server html-webpack-plugin
 
 # Create src directory from the directory where the script was invoked from.
-if [ -d "src" ]; then
-  rm -rf src
-fimkdir src
+if [ ! -d "src" ]; then
+  mkdir src
+fi
 
 # Create webpack.config.js in my root folder with the following contents
 printf "var HTMLWebpackPlugin = require('html-webpack-plugin');\n\

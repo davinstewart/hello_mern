@@ -24,18 +24,16 @@ sudo npm install npm@latest -g -S
 npm init
 
 # Create the directories for code
-if [ -d "src" ]; then
-  rm -rf src
+if [ ! -d "src" ]; then
+  mkdir src
 fi
-mkdir src
-if [ -d "build" ]; then
-  rm -rf build
+
+if [ ! -d "build" ]; then
+  mkdir build
 fi
-mkdir build
-if [ -d "public" ]; then
-  rm -rf public
+if [ ! -d "public" ]; then
+  mkdir public
 fi
-mkdir public
 
 # Create the index.html filename
 >build/index.html
