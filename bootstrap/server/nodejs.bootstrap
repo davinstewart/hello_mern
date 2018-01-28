@@ -37,6 +37,9 @@ if [ -d "public" ]; then
 fi
 mkdir public
 
+# Create the index.html filename
+>build/index.html
+
 # Install the npm build tools
 #sudo apt-get install -y build-essential
 
