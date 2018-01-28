@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ssh-keygen -t rsa -b 4096 -C "me@davinstewart.com"
+
+eval "$(ssh-agent -s)"
+
+#Add key to something
+ssh-add ~/.ssh/id_rsa
+
+# Install x-clip
+sudo apt-get install xclip
+
+#Copy the ssh key to the clipboard
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+echo "Now got to github.com, log in, and go to Settings->SSH and GPG keys and add the ssh key to your account."

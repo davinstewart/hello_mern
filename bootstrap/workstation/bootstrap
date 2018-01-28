@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Find the directory where this script is located
+SCRIPT_DIR=$( cd $(dirname "$0") ; pwd )
+
+# Parse the script parameters.
+PROJECT_NAME=$1
+
+# This script takes one parameter and that's the target directory for the project
+echo "Installing project in the following directory: " + $PROJECT_NAME
+mkdir $PROJECT_NAME
+cd $PROJECT_NAME
+
+# Blank out the log file.
+>bootstrap.log
+
+#Create SSH keys for use with git
+$SCRIPT_DIR/ssh.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log
+
+#Install git
+$SCRIPT_DIR/git.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log
+
+# Install Atom
+$SCRIPT_DIR/atom.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log

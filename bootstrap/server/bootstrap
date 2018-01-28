@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Find the directory where this script is located
+SCRIPT_DIR=$( cd $(dirname "$0") ; pwd )
+
+# Parse the script parameters.
+PROJECT_NAME=$1
+
+# This script takes one parameter and that's the target directory for the project
+echo "Installing project in the following directory: " + $PROJECT_NAME
+# mkdir $PROJECT_NAME
+# cd $PROJECT_NAME
+
+# Blank out the log file.
+>bootstrap.log
+
+# Install nodejs
+$SCRIPT_DIR/nodejs.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log
+
+# Install mongodb
+$SCRIPT_DIR/mongodb.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log
+
+# Install express
+$SCRIPT_DIR/express.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log
+
+# Install React
+$SCRIPT_DIR/react.bootstrap $PROJECT_NAME 2>&1 | tee -a bootstrap.log

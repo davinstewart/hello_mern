@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Install pm2 to be the process manager.  To start the service type pm2 start
+npm install pm2 -S

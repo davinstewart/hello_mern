@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Import the public key used by the package management system.
+#
+# The Ubuntu package management tools (i.e. dpkg and apt) ensure package consistency and authenticity by requiring that distributors
+# sign packages with GPG keys. Issue the following command to import the MongoDB public GPG Key
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+
+# Create a list file for MongoDB.
+#
+# Create the /etc/apt/sources.list.d/mongodb-org-3.2.list list file using the command appropriate for your version of Ubuntu.
+echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+# Reload local package database.
+#
+# Issue the following command to reload the local package database:
+sudo apt-get update
+
+# Install the latest stable version of MongoDB.
+#
+# Issue the following command:
+sudo apt-get install -y mongodb-org
+
+# Pin a specific version of MongoDB.
+#
+# Although you can specify any available version of MongoDB, apt-get will upgrade the packages when a newer version becomes available.
+# To prevent unintended upgrades, pin the package. To pin the version of MongoDB at the currently installed version, issue the
+# following command sequence:
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+
+# (Ubuntu 16.04-only) Create systemd service file
+#
+# Note: Follow this step ONLY if you are running Ubuntu 16.04.
+#
+# Create a new file at /lib/systemd/system/mongod.service with the following contents:
+printf "[Unit]\n\
+Description=High-performance, schema-free document-oriented database\n\
+After=network.target\n\
+Documentation=https://docs.mongodb.org/manual\n\
+\n\
+[Service]\n\
+User=mongodb\n\
+Group=mongodb\n\
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf\n\
+\n\
+[Install]\n\
+WantedBy=multi-user.target\n" | sudo tee /lib/systemd/system/mongod.service
+
+# Update the daemon system in Ubuntu so it recognizes the changes to that service.
+sudo systemctl daemon-reload
+
+# Run MongoDB Community Edition
+#
+# The MongoDB instance stores its data files in /var/lib/mongodb and its log files in /var/log/mongodb by default, and runs using the mongodb user account. You can specify alternate log and data file directories in /etc/mongod.conf. See systemLog.path and storage.dbPath for additional information.
+#
+# If you change the user that runs the MongoDB process, you must modify the access control rights to the /var/lib/mongodb and /var/log/mongodb directories to give this user access to these directories.
+#
+# Start MongoDB.
+#
+# Issue the following command to start mongod:
+sudo service mongod start
+
+# Verify that MongoDB has started successfully
+#
+# Verify that the mongod process has started successfully by checking the contents of the log file at /var/log/mongodb/mongod.log for a line reading
+#
+# [initandlisten] waiting for connections on port <port>
+#
+# where <port> is the port configured in /etc/mongod.conf, 27017 by default.
+tail /var/log/mongodb/mongod.log

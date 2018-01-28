@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Assumption:  There is a fresh, blank github repo already created under your login with the same name as this project.
+
+# Initialize the git repository via SSH
+# Using SSH is important because Atom doesn't work with HTTPS
+git clone git@github.com:davinstewart/$1.git
+
+# Add the commit to the github repo.
+git remote add origin https://github.com/davinstewart/$1.git
+git push -u origin master
+
+# Configure git push default behavior
+git config --global push.default simple

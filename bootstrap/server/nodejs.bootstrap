@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Find the directory where this script is located
+SCRIPT_DIR=$( cd $(dirname "$0") ; pwd )
+
+# Get the latest package definitions.
+sudo apt-get update
+
+#This doesn't work because Debian distros are idiots.
+#sudo apt-get install -y nodejs
+#sudo apt-get install -y nodejs-legacy
+
+#Install curl because Ubuntu distros ship without it.
+sudo apt-get install -y curl
+
+#Install Node.js 9.x.
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install the latest npm version (the one that comes with nodejs is sometimes outdated).
+sudo npm install npm@latest -g -S
+
+#Create the package.json file.
+npm init
+
+# Create the directories for code
+if [ -d "src" ]; then
+  rm -rf src
+fi
+mkdir src
+if [ -d "build" ]; then
+  rm -rf build
+fi
+mkdir build
+if [ -d "public" ]; then
+  rm -rf public
+fi
+mkdir public
+
+# Install the npm build tools
+#sudo apt-get install -y build-essential
+
+#Use webpack to work with babel as a transformation manager
+$SCRIPT_DIR/webpack.bootstrap
+
+#Use babel for the transpiler
+$SCRIPT_DIR/babel.bootstrap
+
+# Install pm2 to be the process manager.  To start the service type pm2 start
+$SCRIPT_DIR/pm2.bootstrap

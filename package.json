@@ -1,0 +1,34 @@
+{
+  "name": "hello_mern",
+  "version": "1.0.0",
+  "description": "A simple MERN project with automated server and workstation setup for Ubuntu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davinstewart/hello_mern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davinstewart/hello_mern/issues"
+  },
+  "homepage": "https://github.com/davinstewart/hello_mern#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "pm2": "^2.9.3",
+    "pug": "^2.0.0-rc.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}

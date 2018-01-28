@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Install webpack to work with babel as a transformation manager
+npm install --save-dev webpack webpack-dev-server html-webpack-plugin
+
+# Create src directory from the directory where the script was invoked from.
+if [ -d "src" ]; then
+  rm -rf src
+fimkdir src
+
+# Create webpack.config.js in my root folder with the following contents
+printf "var HTMLWebpackPlugin = require('html-webpack-plugin');\n\
+var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({\n\
+  template: __dirname + '/app/index.html',\n\
+  filename: 'index.html',\n\
+  inject: 'body'\n\
+});\n\
+module.exports = {\n\
+  entry: __dirname + '/src/index.js'\n\
+  module: {\n\
+    loaders: [\n\
+      {\n\
+        test: /\.jsx$/,\n\
+        exclude: /node_modules/,\n\
+        loader: babel-loader\n\
+      }\n\
+    ]\n\
+  },\n\
+  output: {\n\
+    filename: 'transformed.js',\n\
+    path: __dirname + '/build'\n\
+  },\n\
+  plugins: [HTMLWebpackPluginConfig]\n\
+}\n" | tee ./src/webpack.config.js

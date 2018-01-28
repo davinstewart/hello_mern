@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Install React
+npm install react react-dom -S

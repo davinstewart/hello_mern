@@ -1,0 +1,259 @@
+Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+Ign:4 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease
+Hit:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release
+Hit:6 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Hit:7 https://deb.nodesource.com/node_9.x xenial InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.47.0-1ubuntu2.5).
+The following packages were automatically installed and are no longer required:
+  gyp javascript-common libjs-inherits libjs-jquery libjs-node-uuid
+  libjs-underscore libllvm4.0 libssl-dev libssl-doc libuv1 libuv1-dev
+  linux-headers-4.10.0-28 linux-headers-4.10.0-28-generic
+  linux-image-4.10.0-28-generic linux-image-extra-4.10.0-28-generic
+  node-abbrev node-ansi node-ansi-color-table node-archy node-async
+  node-block-stream node-combined-stream node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fstream node-fstream-ignore
+  node-github-url-from-git node-glob node-graceful-fs node-gyp node-inherits
+  node-ini node-json-stringify-safe node-lockfile node-lru-cache node-mime
+  node-minimatch node-mkdirp node-mute-stream node-node-uuid node-nopt
+  node-normalize-package-data node-npmlog node-once node-osenv node-qs
+  node-read node-read-package-json node-request node-retry node-rimraf
+  node-semver node-sha node-sigmund node-slide node-tar node-tunnel-agent
+  node-underscore node-which python-pkg-resources zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+## Installing the NodeSource Node.js v9.x repo...
+
+
+## Populating apt-get cache...
+
++ apt-get update
+Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Hit:2 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Ign:4 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+Hit:6 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release
+Hit:7 https://deb.nodesource.com/node_9.x xenial InRelease
+Reading package lists...
+
+## Confirming "xenial" is supported...
+
++ curl -sLf -o /dev/null 'https://deb.nodesource.com/node_9.x/dists/xenial/Release'
+
+## Adding the NodeSource signing key to your keyring...
+
++ curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+OK
+
+## Creating apt sources list file for the NodeSource Node.js v9.x repo...
+
++ echo 'deb https://deb.nodesource.com/node_9.x xenial main' > /etc/apt/sources.list.d/nodesource.list
++ echo 'deb-src https://deb.nodesource.com/node_9.x xenial main' >> /etc/apt/sources.list.d/nodesource.list
+
+## Running `apt-get update` for you...
+
++ apt-get update
+Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Hit:2 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Ign:3 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Hit:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release
+Hit:6 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+Hit:7 https://deb.nodesource.com/node_9.x xenial InRelease
+Reading package lists...
+
+## Run `apt-get install nodejs` (as root) to install Node.js v9.x and npm
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nodejs is already the newest version (9.4.0-1nodesource1).
+The following packages were automatically installed and are no longer required:
+  gyp javascript-common libjs-inherits libjs-jquery libjs-node-uuid
+  libjs-underscore libllvm4.0 libssl-dev libssl-doc libuv1 libuv1-dev
+  linux-headers-4.10.0-28 linux-headers-4.10.0-28-generic
+  linux-image-4.10.0-28-generic linux-image-extra-4.10.0-28-generic
+  node-abbrev node-ansi node-ansi-color-table node-archy node-async
+  node-block-stream node-combined-stream node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fstream node-fstream-ignore
+  node-github-url-from-git node-glob node-graceful-fs node-gyp node-inherits
+  node-ini node-json-stringify-safe node-lockfile node-lru-cache node-mime
+  node-minimatch node-mkdirp node-mute-stream node-node-uuid node-nopt
+  node-normalize-package-data node-npmlog node-once node-osenv node-qs
+  node-read node-read-package-json node-request node-retry node-rimraf
+  node-semver node-sha node-sigmund node-slide node-tar node-tunnel-agent
+  node-underscore node-which python-pkg-resources zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+/usr/local/bin/npm -> /usr/local/lib/node_modules/npm/bin/npm-cli.js
+/usr/local/bin/npx -> /usr/local/lib/node_modules/npm/bin/npx-cli.js
++ npm@5.6.0
+updated 1 package in 5.732s
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (hello_mern) version: (1.0.0) description: entry point: (index.js) test command: git repository: (https://github.com/davinstewart/hello_mern.git) keywords: author: license: (ISC) About to write to /home/dstewart/hello_mern/package.json:
+
+{
+  "name": "hello_mern",
+  "version": "1.0.0",
+  "description": "A simple MERN project with automated server and workstation setup for Ubuntu.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davinstewart/hello_mern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davinstewart/hello_mern/issues"
+  },
+  "homepage": "https://github.com/davinstewart/hello_mern#readme"
+}
+
+
+Is this ok? (yes) npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN babel-loader@7.1.2 requires a peer of webpack@2 || 3 but none is installed. You must install peer dependencies yourself.
+
++ babel-core@6.26.0
++ babel-loader@7.1.2
++ babel-preset-react@6.24.1
+added 76 packages in 14.317s
+{presets: ['react'] }
+> uglifyjs-webpack-plugin@0.4.6 postinstall /home/dstewart/hello_mern/node_modules/uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ webpack@3.10.0
++ html-webpack-plugin@2.30.1
++ webpack-dev-server@2.11.1
+added 613 packages in 31.929s
+mkdir: cannot create directory ‘src’: File exists
+var HTMLWebpackPlugin = require('html-webpack-plugin');
+var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+  template: __dirname + '/app/index.html',
+  filename: 'index.html',
+  inject: 'body'
+});
+module.exports = {
+  entry: __dirname + '/src/index.js'
+  module: {
+    loaders: [
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: babel-loader
+      }
+    ]
+  },
+  output: {
+    filename: 'transformed.js',
+    path: __dirname + '/build'
+  },
+  plugins: [HTMLWebpackPluginConfig]
+}npm WARN registry Unexpected warning for https://registry.npmjs.org/: Miscellaneous Warning EINTEGRITY: sha1-QFUCsAfzGcP0cXXER0UnMA8qta0= integrity checksum failed when using sha1: wanted sha1-QFUCsAfzGcP0cXXER0UnMA8qta0= but got sha512-zr6QQnzLt3Ja0t0XI8gws2kn7zV2p0l/D3kreNvS6hFZhVU5g+uY/30l42jbgt0XGcNBEmBDGJR71J692V92tA==. (260 bytes)
+npm WARN registry Using stale package data from https://registry.npmjs.org/ due to a request error during revalidation.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ pm2@2.9.3
+added 56 packages in 15.526s
+Executing: /tmp/tmp.6aXk5J8Igd/gpg.1.sh --keyserver
+hkp://keyserver.ubuntu.com:80
+--recv
+EA312927
+gpg: requesting key EA312927 from hkp server keyserver.ubuntu.com
+gpg: key EA312927: "MongoDB 3.2 Release Signing Key <packaging@mongodb.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+Ign:3 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+Hit:5 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 Release
+Hit:6 http://security.ubuntu.com/ubuntu xenial-security InRelease
+Hit:7 https://deb.nodesource.com/node_9.x xenial InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+mongodb-org is already the newest version (3.2.18).
+The following packages were automatically installed and are no longer required:
+  gyp javascript-common libjs-inherits libjs-jquery libjs-node-uuid
+  libjs-underscore libllvm4.0 libssl-dev libssl-doc libuv1 libuv1-dev
+  linux-headers-4.10.0-28 linux-headers-4.10.0-28-generic
+  linux-image-4.10.0-28-generic linux-image-extra-4.10.0-28-generic
+  node-abbrev node-ansi node-ansi-color-table node-archy node-async
+  node-block-stream node-combined-stream node-cookie-jar node-delayed-stream
+  node-forever-agent node-form-data node-fstream node-fstream-ignore
+  node-github-url-from-git node-glob node-graceful-fs node-gyp node-inherits
+  node-ini node-json-stringify-safe node-lockfile node-lru-cache node-mime
+  node-minimatch node-mkdirp node-mute-stream node-node-uuid node-nopt
+  node-normalize-package-data node-npmlog node-once node-osenv node-qs
+  node-read node-read-package-json node-request node-retry node-rimraf
+  node-semver node-sha node-sigmund node-slide node-tar node-tunnel-agent
+  node-underscore node-which python-pkg-resources zlib1g-dev
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+Documentation=https://docs.mongodb.org/manual
+
+[Service]
+User=mongodb
+Group=mongodb
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target
+2018-01-27T19:38:40.883-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-01-27T19:38:40.883-0500 I CONTROL  [initandlisten] options: { config: "/etc/mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/var/lib/mongodb", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/var/log/mongodb/mongod.log", quiet: true } }
+2018-01-27T19:38:40.920-0500 I -        [initandlisten] Detected data files in /var/lib/mongodb created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-01-27T19:38:40.920-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=18G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-01-27T19:38:41.275-0500 I STORAGE  [initandlisten] WiredTiger [1517099921:275864][12557:0x7f301bfbdc80], txn-recover: Main recovery loop: starting at 1/11648
+2018-01-27T19:38:41.396-0500 I STORAGE  [initandlisten] WiredTiger [1517099921:396807][12557:0x7f301bfbdc80], txn-recover: Recovering log 1 through 2
+2018-01-27T19:38:41.501-0500 I STORAGE  [initandlisten] WiredTiger [1517099921:501576][12557:0x7f301bfbdc80], txn-recover: Recovering log 2 through 2
+2018-01-27T19:38:41.951-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2018-01-27T19:38:41.951-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/lib/mongodb/diagnostic.data'
+2018-01-27T19:38:41.951-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ express@4.16.2
+updated 1 package in 5.403s
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ pug@2.0.0-rc.4
+added 39 packages in 6s
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+up to date in 4.173s
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ react@16.2.0
++ react-dom@16.2.0
+added 10 packages in 5.752s

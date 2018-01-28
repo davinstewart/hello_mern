@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Install Atom
+sudo snap install --classic atom
+
+# Install packages
+sudo apm install git-plus atom-beautify atom-ternjs autocomplete-modules emmet emmet-jsx-css-modules es6-javascript linter-eslint tree-view-copy-relative-path language-babel react-es7-snippets atom-jest-snippets
+
+# Install additional UI theme packages
+sudo apm install dracula-theme

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Install the express module
+npm install express -S
+
+# Install the express generator command line tool
+# sudo npm install express-generator -S
+
+# Create a folder for the project
+#if [ -d "express-sample" ]; then
+#  rm -rf express-sample
+#fi
+#mkdir express-sample
+#cd express-sample
+
+# Run express to setup a new projet
+#express
+
+# Jade is deprecated. Long live pug.
+npm install pug -S
+
+# Use npm to install all of the dependencies for express
+npm install -S

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Assumption:  There is a fresh, blank github repo already created under your login with the same name as this project.
+
+# Create the README.md file
+echo "# " + $1 >> README.md
+
+# Initialize the git repository
+git init
+
+# Add the README.md file to the local repo.
+git add README.md
+
+# Commit that change to the local repo.
+git commit -m "first commit"
+
+# Add the commit to the github repo.
+git remote add origin https://github.com/davinstewart/$1.git
+git push -u origin master
