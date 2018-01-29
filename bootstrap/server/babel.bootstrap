@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Install babel to use as the transpiler.
-npm install --save-dev babel-core babel-loader babel-preset-react
+sudo npm install -g babel-cli
+npm install --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015 babel-preset-stage-2
 
 # Create .babelrc in my root folder with the following contents
 printf "{presets: ['react'] }" | tee ./.babelrc
